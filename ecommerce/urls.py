@@ -22,6 +22,8 @@ from django.contrib import admin
 
 from .views import home_page, about_page, contact_page, login_page, register_page
 
+from products.views import ProductListView, product_list_view
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home_page),
