@@ -39,6 +39,10 @@ def product_list_view(request):
     return render(request, 'products/list.html', context)
 
 
+class ProductDetailSlugView(DetailView):
+    queryset = Product.objects.all()
+    template_name = "products/detail.html"
+
 class ProductDetailView(DetailView):
     template_name = "products/detail.html"
 
