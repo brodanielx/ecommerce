@@ -10,14 +10,14 @@ class ProductFeaturedListView(ListView):
 
     def get_queryset(self, ):
         request = self.request
-        return Product.objects.all()
+        return Product.objects.all().featured()
 
 class ProductFeaturedDetailView(DetailView):
     template_name = "products/featured-detail.html"
 
     def get_queryset(self, ):
         request = self.request
-        return Product.objects.all()
+        return Product.objects.all().featured()
 
 class ProductListView(ListView):
     template_name = "products/list.html"

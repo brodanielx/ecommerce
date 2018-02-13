@@ -21,7 +21,11 @@ from django.conf.urls import url
 from django.contrib import admin
 
 from .views import (
-    home_page, about_page, contact_page, login_page, register_page
+    home_page,
+    about_page,
+    contact_page,
+    login_page,
+    register_page
     )
 
 from products.views import (
