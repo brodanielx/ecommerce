@@ -1,0 +1,9 @@
+bootstrap is mobile first
+- col-12 col-sm-12 => col-12 is the mobile size
+- col-12 col-sm-10 col-md-6 col-lg-4
+- ml-auto and mr-auto, mx-auto
+- order-#
+- col-auto
+- ml-lg-auto
+- spacing
+  - py-5, mt-6
