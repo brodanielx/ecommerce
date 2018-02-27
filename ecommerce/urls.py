@@ -21,6 +21,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from django.views.generic import TemplateView
 
+from carts.views import cart_home
+
 from .views import (
     home_page,
     about_page,
@@ -28,16 +30,6 @@ from .views import (
     login_page,
     register_page
     )
-
-# from products.views import (
-#     ProductListView,
-#     product_list_view,
-#     ProductDetailView,
-#     ProductDetailSlugView,
-#     product_detail_view,
-#     ProductFeaturedListView,
-#     ProductFeaturedDetailView
-#     )
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -49,13 +41,7 @@ urlpatterns = [
     url(r'^bootstrap/$', TemplateView.as_view(template_name='bootstrap/example.html')),
     url(r'^products/', include('products.urls', namespace='products')),
     url(r'^search/', include('search.urls', namespace='search')),
-    # url(r'^featured/$', ProductFeaturedListView.as_view()),
-    # url(r'^featured/(?P<pk>\d+)/$', ProductFeaturedDetailView.as_view()),
-    # url(r'^products/$', ProductListView.as_view()),
-    # url(r'^products-fbv/$', product_list_view),
-    # url(r'^products/(?P<pk>\d+)/$', ProductDetailView.as_view()),
-    # url(r'^products/(?P<slug>[\w-]+)/$', ProductDetailSlugView.as_view()),
-    # url(r'^products-fbv/(?P<pk>\d+)/$', product_detail_view),
+    url(r'^cart/$', cart_home, name='cart'),
 ]
 
 if settings.DEBUG:
