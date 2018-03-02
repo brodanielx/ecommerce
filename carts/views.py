@@ -2,19 +2,21 @@ from django.shortcuts import render
 
 from .models import Cart
 
+def cart_create(user=None):
+    cart_obj = Cart.objects.create(user=None)
+    print('new cart created')
+    return cart_obj
+
 def cart_home(request):
-    # del request.session['cart_id']
     cart_id = request.session.get('cart_id', None)
-    if cart_id is None:  #and isinstance(cart_id, int):
-        cart_obj = Cart.objects.create(user=None)
-        request.session['cart_id'] = cart_obj.id
-        print('new cart created')
-    else:
+    qs = Cart.objects.filter(id=cart_id)
+    if qs.count() == 1:
         print('cart id exists')
-        print(cart_id)
-        cart_obj = Cart.objects.get(id=cart_id)
-    # print(request.session)
-    # key = request.session.session_key
-    # print(key)
-    request.session['first_name'] = 'Louis'
+        cart_obj = qs.first()
+        if request.user.is_authenticated() and cart_obj.user is not None:
+            cart_obj.user = request.user
+            cart_obj.save()
+    else:
+        cart_obj = Cart.objects.new(user=request.user)
+        request.session['cart_id'] = cart_obj.id
     return render(request, "carts/home.html", {})
