@@ -26,7 +26,8 @@ from carts.views import cart_home
 
 from accounts.views import (
     login_page,
-    register_page
+    register_page,
+    guest_register_view
 )
 from .views import (
     home_page,
@@ -40,6 +41,7 @@ urlpatterns = [
     url(r'^about/$', about_page, name='about'),
     url(r'^contact/$', contact_page, name='contact'),
     url(r'^login/$', login_page, name='login'),
+    url(r'^register/guest/$', guest_register_view, name='guest_register'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^register/$', register_page, name='register'),
     url(r'^bootstrap/$', TemplateView.as_view(template_name='bootstrap/example.html')),
