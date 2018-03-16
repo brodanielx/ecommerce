@@ -48,14 +48,16 @@ def checkout_home(request):
     else:
         pass
 
-    order_qs = Order.objects.filter(cart=cart_obj, active=True)
-    if order_qs.exists():
-        order_qs.update(active=False)
-    else:
-        order_obj = Order.objects.create(cart=cart_obj)
 
-
-
+    if billing_profile is not None:
+        order_qs = Order.objects.filter(cart=cart_obj, active=True)
+        if order_qs.exists():
+            order_qs.update(active=False)
+        else:
+            order_obj = Order.objects.create(
+                        billing_profile=billing_profile,
+                        cart=cart_obj
+                    )
 
     context = {
         'object': order_obj,
