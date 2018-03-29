@@ -18,9 +18,14 @@
 {% else %}
 
   {% if not object.shipping_address %}
-    {% url 'guest_register' as guest_register_url %}
-    {% include 'addresses/form.html' with form=address_form next_url=request.build_absolute_uri action_url=guest_register_url %}
-
+  <div class="row">
+    <div class="col-md-6 mx-auto col-10">
+      <p class="lead">Shipping Address</p>
+      <hr>
+      {% url 'guest_register' as guest_register_url %}
+      {% include 'addresses/form.html' with form=address_form next_url=request.build_absolute_uri action_url=guest_register_url address_type='shipping' %}
+    </div>
+  </div>
 
   {% else %}
 
