@@ -31,6 +31,7 @@ from accounts.views import (
 )
 from addresses.views import (
     checkout_address_create_view,
+    checkout_address_reuse_view,
 )
 from .views import (
     home_page,
@@ -45,6 +46,7 @@ urlpatterns = [
     url(r'^contact/$', contact_page, name='contact'),
     url(r'^login/$', login_page, name='login'),
     url(r'^checkout/address/create/$', checkout_address_create_view, name='checkout_address_create'),
+    url(r'^checkout/address/reuse/$', checkout_address_reuse_view, name='checkout_address_reuse'),
     url(r'^register/guest/$', guest_register_view, name='guest_register'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^register/$', register_page, name='register'),
