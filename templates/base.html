@@ -43,7 +43,7 @@
               navbarCount.text(data.cartItemCount)
               var currentPath = window.location.href
               if (currentPath.indexOf("cart") != -1) {
-                updateCart()
+                refreshCart()
               }
             },
             error: function(errorData) {
@@ -53,11 +53,37 @@
           })
         })
 
-        function updateCart() {
+        function refreshCart() {
           console.log('in current cart')
           var cartTable = $(".cart-table")
           var cartBody = cartTable.find(".cart-body")
-          cartBody.html('<h1>Changed</h1>')
+          var productRows = cartBody.find(".cart-product")
+          var currentUrl = window.location.href
+
+          var refreshCartUrl = '/api/cart/';
+          var refreshCartMethod = "GET"
+          var data = {};
+          $.ajax({
+            url: refreshCartUrl,
+            method: refreshCartMethod,
+            data: data,
+            success: function(data) {
+              console.log("success")
+              console.log(data)
+              if (data.products.length > 0) {
+                productRows.html("")
+                cartBody.prepend("<tr><td colspan=3>Coming Soon</td></th>")
+                cartBody.find(".cart-subtotal").text(data.subtotal)
+                cartBody.find(".cart-total").text(data.total)
+              } else {
+                window.location.href = currentUrl
+              }
+            },
+            error: function(errorData) {
+              console.log("error")
+              console.log(errorData)
+            }
+          })
         }
 
       })
