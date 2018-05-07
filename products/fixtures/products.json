@@ -1,0 +1,58 @@
+[
+{
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+        "title": "T-Shirt",
+        "slug": "t-shirt",
+        "description": "this is a shirt.",
+        "price": "39.99",
+        "image": "",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-02-16T11:59:20.621Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+        "title": "Hat",
+        "slug": "hat",
+        "description": "this is a hat",
+        "price": "39.99",
+        "image": "products/907111456/907111456.jpg",
+        "featured": false,
+        "active": true,
+        "timestamp": "2018-02-16T11:59:20.621Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+        "title": "Computer",
+        "slug": "computer",
+        "description": "computer descripton",
+        "price": "390.99",
+        "image": "",
+        "featured": true,
+        "active": true,
+        "timestamp": "2018-02-16T11:59:20.621Z"
+    }
+},
+{
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+        "title": "Lorem Ipsum",
+        "slug": "lorem-ipsum",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut orci sit amet quam tincidunt efficitur at ac risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eleifend lacus vel mauris tincidunt aliquet. Maecenas odio urna, interdum vel suscipit et, sodales in metus. Nulla facilisi. Nunc tincidunt enim sed turpis sollicitudin ultricies. Nunc rhoncus vitae leo at dapibus. Aliquam velit dolor, ornare et augue vel, rutrum tempor lacus. Ut turpis turpis, euismod at finibus ac, imperdiet non lorem. Donec ut quam ac ligula vehicula placerat vitae euismod mauris. Nunc bibendum nisl urna. Quisque venenatis malesuada pharetra. Mauris dictum semper dolor quis malesuada. Etiam lorem nisl, vestibulum eget odio ac, vestibulum dapibus metus. Nunc enim dolor, pellentesque a sapien vitae, congue ultricies lectus.\r\n\r\nMauris elementum urna vitae justo feugiat, id consequat mi faucibus. Phasellus vestibulum sapien elit, pulvinar mattis turpis cursus ac. Donec aliquet erat pulvinar massa porttitor, in efficitur felis sollicitudin. Suspendisse potenti. Donec ac nunc ut arcu cursus semper. Aliquam dolor sapien, commodo sed purus ut, scelerisque consequat orci. Duis quam arcu, ultricies sit amet tellus porta, semper cursus massa.",
+        "price": "39.99",
+        "image": "",
+        "featured": true,
+        "active": true,
+        "timestamp": "2018-02-16T11:59:20.621Z"
+    }
+}
+]
